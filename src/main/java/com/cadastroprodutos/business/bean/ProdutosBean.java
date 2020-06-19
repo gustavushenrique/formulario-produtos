@@ -7,15 +7,34 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 @SessionScoped
-@ManagedBean(name="produtos")
+@ManagedBean(name = "produtos")
 public class ProdutosBean {
-	private List<ProdutosBean> produtos;
+	private List<ProdutoBean> produtos;
+	private ProdutoBean produtoSelecionado;
 
 	public ProdutosBean() {
 		produtos = new ArrayList<>();
+		produtoSelecionado = new ProdutoBean();
 	}
-	
-	public List<ProdutosBean> getProdutos(){
+
+	public List<ProdutoBean> getProdutos() {
 		return produtos;
+	}
+
+	public void adicionar(ProdutoBean produto) {
+		produtos.add(produto);
+	}
+
+	public void remover(ProdutoBean produto) {
+		produtos.remove(produto);
+	}
+
+	public String selecionar(ProdutoBean produto) {
+		produtoSelecionado = produto;
+		return "detalhe";
+	}
+
+	public ProdutoBean getProdutoSelecionado() {
+		return produtoSelecionado;
 	}
 }

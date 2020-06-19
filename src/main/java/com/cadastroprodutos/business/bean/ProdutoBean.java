@@ -8,7 +8,7 @@ import javax.faces.bean.RequestScoped;
 public class ProdutoBean {
 	private String nomeProduto;
 	private String categoria;
-	private String preco;
+	private Float preco;
 
 	public String getNomeProduto() {
 		return nomeProduto;
@@ -26,11 +26,11 @@ public class ProdutoBean {
 		this.categoria = categoria;
 	}
 
-	public String getPreco() {
+	public Float getPreco() {
 		return preco;
 	}
 
-	public void setPreco(String preco) {
+	public void setPreco(Float preco) {
 		this.preco = preco;
 	}
 }
